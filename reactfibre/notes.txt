@@ -1,0 +1,7 @@
+### Definition of Reconciliation
+Reconciliation is the algorithm React uses to diff one tree with another to determine which parts need to be changed. This process is key to optimizing updates and rendering in React applications.
+
+### Three Important Points on Tree Updating and Reconciliation
+1. **Incremental Rendering**: React Fiber introduces incremental rendering, which allows the rendering work to be split into chunks that can be paused, aborted, or reused. This helps in handling complex updates without affecting the performance significantly.
+2. **Diffing Algorithm**: The reconciliation process involves diffing the new tree against the previous one to compute the necessary updates. Different component types generate different trees, and React replaces the old tree completely rather than attempting to diff them.
+3. **Separation of Phases**: React separates the reconciliation and rendering phases. The reconciler computes which parts of the tree have changed, and the renderer updates the actual rendered app. This separation allows React to support multiple rendering environments like DOM and React Native.
